@@ -97,7 +97,7 @@ func GetConfiguration() Configuration {
 
 // GetDocuments retrieves and returns an DocumentsResult struct
 func GetDocuments(configuration Configuration) DocumentsResult {
-	url := strings.Join([]string{API_URL, "/rest/v1/documents?lang=en&order=DESC&page=1&pageSize=50&sort=date"}, "")
+	url := strings.Join([]string{API_URL, "/rest/v2/documents?lang=en&order=DESC&page=1&pageSize=50&sort=date"}, "")
 
 	var resp = DoRequest(configuration, url, "GET")
 	defer resp.Body.Close()
@@ -114,7 +114,7 @@ func GetDocuments(configuration Configuration) DocumentsResult {
 
 // GetNewDocuments retrieves and returns an DocumentsResult struct with new documents only
 func GetNewDocuments(configuration Configuration) DocumentsResult {
-	url := strings.Join([]string{API_URL, "/rest/v1/documents/new?lang=en&order=DESC&page=1&pageSize=50&sort=date"}, "")
+	url := strings.Join([]string{API_URL, "/rest/v2/documents/new?lang=en&order=DESC&page=1&pageSize=50&sort=date"}, "")
 
 	var resp = DoRequest(configuration, url, "GET")
 	defer resp.Body.Close()
